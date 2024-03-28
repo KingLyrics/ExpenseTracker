@@ -57,9 +57,9 @@
 		A816BD002BB6032000200605 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				A816BD0F2BB6055C00200605 /* Views */,
 				A816BD012BB6032000200605 /* ExpenseTrackerApp.swift */,
 				A816BD032BB6032000200605 /* ContentView.swift */,
+				A816BD0F2BB6055C00200605 /* Views */,
 				A816BD052BB6032200200605 /* Assets.xcassets */,
 				A816BD072BB6032200200605 /* Preview Content */,
 			);

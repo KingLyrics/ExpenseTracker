@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var darkModeEnabled:Bool = false
+
     var body: some View {
         VStack{
-            HeaderView()
+            HeaderView(darkModeEnabled: $darkModeEnabled)
             Spacer()
             TotalMonthView()
             Spacer()
@@ -18,6 +21,7 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(20)
+            .preferredColorScheme(darkModeEnabled ? .dark : .light)
         
     }
 }

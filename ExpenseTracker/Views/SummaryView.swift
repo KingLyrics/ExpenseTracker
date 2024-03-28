@@ -16,7 +16,7 @@ struct SummaryView: View {
                     Text("$ -765.50")
                     
                 }
-                .foregroundStyle(.gray)
+                .foregroundStyle(.secondary)
                 .font(.headline)
                 .padding(.bottom, 10)
             
@@ -30,7 +30,7 @@ struct SummaryView: View {
                                 Text("Food")
                                     .fontWeight(.semibold)
                                 Text("2:45 AM")
-                                    .foregroundStyle(.gray)
+                                    .foregroundStyle(.secondary)
                             }
                         }
                         Spacer()

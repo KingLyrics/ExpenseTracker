@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Binding var darkModeEnabled:Bool
+    
     var body: some View {
             HStack{
-                Image(systemName: "moon.stars")
-                    .font(.largeTitle)
+                Button(action: {
+                    darkModeEnabled.toggle()
+                }, label: {
+                    Image(systemName: darkModeEnabled ?  "sun.min" : "moon.stars")
+                        .font(.largeTitle)
+                })
                 Spacer()
                 Text("EXPENSES")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -24,5 +30,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(darkModeEnabled: .constant(false))
 }
