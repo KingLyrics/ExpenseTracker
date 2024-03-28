@@ -8,43 +8,45 @@
 import SwiftUI
 
 struct SummaryView: View {
+    let totalAmount:Double
+    
     var body: some View {
         VStack{
                 HStack{
                     Text("Today")
                     Spacer()
-                    Text("$ -765.50")
+                    Text(totalAmount, format:.currency(code: "USD"))
                     
                 }
                 .foregroundStyle(.secondary)
                 .font(.headline)
                 .padding(.bottom, 10)
-            
-                    HStack{
-                        HStack(spacing:10){
-                            Image(.pizza)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 25)
-                            VStack(alignment:.leading){
-                                Text("Food")
-                                    .fontWeight(.semibold)
-                                Text("2:45 AM")
-                                    .foregroundStyle(.secondary)
-                            }
+           
+                HStack{
+                    HStack(spacing:10){
+                        Image(.food)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
+                        VStack(alignment:.leading){
+                            Text("Food")
+                                .fontWeight(.semibold)
+                            Text("2:45 AM")
+                                .foregroundStyle(.secondary)
                         }
-                        Spacer()
-                        Text("$ -80")
-                            .foregroundStyle(.red)
                     }
-                    
+                    Spacer()
+                    Text("$ -80")
+                        .foregroundStyle(.red)
+                }
                 
+            
             
         }
     }
 }
 
 #Preview {
-    SummaryView()
+    SummaryView(totalAmount: 450.80)
         .padding()
 }

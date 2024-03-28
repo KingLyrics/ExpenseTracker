@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct TotalMonthView: View {
+    var totalAmount:Double
+    
     var body: some View {
         VStack(spacing:20){
             Text("Spent this month")
                 .foregroundStyle(.gray)
                 .font(.title3)
-            Text("$ -765.50")
+            Text(totalAmount, format:.currency(code: "USD"))
                 .font(.largeTitle)
                 .fontWeight(.light)
-                .foregroundStyle(.red)
+                .foregroundStyle(totalAmount < 0 ? .red : .green)
         }
     }
 }
 
 #Preview {
-    TotalMonthView()
+    TotalMonthView(totalAmount: 654.50)
 }
