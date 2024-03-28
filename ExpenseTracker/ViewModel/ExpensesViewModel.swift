@@ -15,16 +15,16 @@ class ExpensesViewModel{
         
         ExpenseModel(expenseCategory:.Groceries, image:.groceries , timePurchased: "1:00PM", amount: -81.99),
         
-        ExpenseModel(expenseCategory: .Gas, image: .gas, timePurchased: "3:00PM", amount: -20.11)
+        ExpenseModel(expenseCategory: .Gas, image: .gas, timePurchased: "3:00PM", amount: -20.11),
+        
+        ExpenseModel(expenseCategory: .Education, image: .education, timePurchased: "4:00AM", amount: -900.10)
         
         ]
     
     init() {}
     
     var totalAmount:Double{
-        
         var sum:Double = 0.0
-        
         for expense in expenseItems{
             sum+=expense.amount
         }

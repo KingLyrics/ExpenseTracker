@@ -17,13 +17,16 @@ struct HeaderView: View {
                     
                 }, label: {
                     Image(systemName: darkModeEnabled ?  "sun.min" : "moon.stars")
-                        .font(.largeTitle)
+                        .font(.title)
+                        .foregroundStyle(darkModeEnabled ? .white : .black)
                 })
                 Spacer()
                 Text("EXPENSES")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title3)
                 Spacer()
-                Image(systemName: "arrowshape.right")
+                Image(systemName: "plus")
+                    .font(.title2)
                 
         }
     }
