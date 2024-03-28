@@ -15,6 +15,7 @@
 		A816BD132BB606DA00200605 /* TotalMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD122BB606DA00200605 /* TotalMonthView.swift */; };
 		A816BD152BB60DF400200605 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD142BB60DF400200605 /* SummaryView.swift */; };
 		A816BD182BB61C0100200605 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD172BB61C0100200605 /* ExpenseModel.swift */; };
+		A816BD1B2BB6278A00200605 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD1A2BB6278A00200605 /* ExpensesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A816BD122BB606DA00200605 /* TotalMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMonthView.swift; sourceTree = "<group>"; };
 		A816BD142BB60DF400200605 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		A816BD172BB61C0100200605 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
+		A816BD1A2BB6278A00200605 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		A816BD002BB6032000200605 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				A816BD192BB6277100200605 /* ViewModel */,
 				A816BD162BB61BF400200605 /* Models */,
 				A816BD012BB6032000200605 /* ExpenseTrackerApp.swift */,
 				A816BD032BB6032000200605 /* ContentView.swift */,
@@ -93,6 +96,14 @@
 				A816BD172BB61C0100200605 /* ExpenseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A816BD192BB6277100200605 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A816BD1A2BB6278A00200605 /* ExpensesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				A816BD132BB606DA00200605 /* TotalMonthView.swift in Sources */,
 				A816BD042BB6032000200605 /* ContentView.swift in Sources */,
 				A816BD152BB60DF400200605 /* SummaryView.swift in Sources */,
+				A816BD1B2BB6278A00200605 /* ExpensesViewModel.swift in Sources */,
 				A816BD112BB6056A00200605 /* HeaderView.swift in Sources */,
 				A816BD022BB6032000200605 /* ExpenseTrackerApp.swift in Sources */,
 			);
