@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SummaryView: View {
-    let totalAmount:Double
+    @Binding var totalAmount:Double
     let expenseItems:[ExpenseModel]
     
     var body: some View {
@@ -50,7 +50,7 @@ struct SummaryView: View {
 }
 
 #Preview {
-    SummaryView(totalAmount: 450.80, expenseItems: [
+    SummaryView(totalAmount: .constant(-400), expenseItems: [
         ExpenseModel(expenseCategory: .Food, image: .food, timePurchased: "2:45Am", amount: -45.99),
         
         ExpenseModel(expenseCategory:.Groceries, image:.groceries , timePurchased: "1:00PM", amount: -81.99),

@@ -10,16 +10,18 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var expenseViewModel = ExpensesViewModel()
+    @State private var totalAmount = ExpensesViewModel().totalAmount
     @State var darkModeEnabled:Bool = false
+    
     
    
     var body: some View {
         VStack{
             HeaderView(darkModeEnabled: $darkModeEnabled)
             Spacer()
-            TotalMonthView(totalAmount: expenseViewModel.totalAmount)
+            TotalMonthView(totalAmount: totalAmount)
             Spacer()
-            SummaryView(totalAmount: expenseViewModel.totalAmount , expenseItems: expenseViewModel.expenseItems)
+            SummaryView(totalAmount: $totalAmount , expenseItems: expenseViewModel.expenseItems)
                 Spacer()
             }
             .padding(20)
