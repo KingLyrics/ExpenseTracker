@@ -12,12 +12,13 @@ import SwiftUI
 struct ExpenseModel:Identifiable{
     var id = UUID()
     let expenseCategory:ExpenseType
+    let image:ImageResource
     let timePurchased:String
     let amount:Double
 }
 
 
-enum ExpenseType:CaseIterable{
+enum ExpenseType:String,CaseIterable{
     case Food
     case Vacation
     case Clothes

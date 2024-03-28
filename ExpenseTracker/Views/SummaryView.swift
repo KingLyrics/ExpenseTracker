@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SummaryView: View {
     let totalAmount:Double
+    let expenseItem:ExpenseModel
     
     var body: some View {
         VStack{
@@ -24,29 +25,27 @@ struct SummaryView: View {
            
                 HStack{
                     HStack(spacing:10){
-                        Image(.food)
+                        Image(expenseItem.image)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25)
                         VStack(alignment:.leading){
-                            Text("Food")
+                            Text(expenseItem.expenseCategory.rawValue)
                                 .fontWeight(.semibold)
-                            Text("2:45 AM")
+                            Text(expenseItem.timePurchased)
                                 .foregroundStyle(.secondary)
                         }
                     }
                     Spacer()
-                    Text("$ -80")
-                        .foregroundStyle(.red)
+                    Text(expenseItem.amount, format:.currency(code: "USD"))
+                        .foregroundStyle(expenseItem.amount < 0 ? .red : .green)
                 }
-                
-            
             
         }
     }
 }
 
 #Preview {
-    SummaryView(totalAmount: 450.80)
+    SummaryView(totalAmount: 450.80, expenseItem:  ExpenseModel(expenseCategory: .Food, image: .food, timePurchased: "2:45Am", amount: 45.99))
         .padding()
 }

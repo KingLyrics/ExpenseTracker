@@ -12,6 +12,10 @@ struct ContentView: View {
     @State var darkModeEnabled:Bool = false
     let totalAmount:Double = 650.50
     
+    let expenseItem:ExpenseModel =
+        ExpenseModel(expenseCategory: .Food, image: .food, timePurchased: "2:45Am", amount: 45.99)
+    
+    
 
     var body: some View {
         VStack{
@@ -19,7 +23,7 @@ struct ContentView: View {
             Spacer()
             TotalMonthView(totalAmount: totalAmount)
             Spacer()
-            SummaryView(totalAmount: totalAmount)
+            SummaryView(totalAmount: totalAmount, expenseItem: expenseItem)
                 Spacer()
             }
             .padding(20)
