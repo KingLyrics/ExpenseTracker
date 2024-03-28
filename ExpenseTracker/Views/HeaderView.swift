@@ -13,7 +13,8 @@ struct HeaderView: View {
     var body: some View {
             HStack{
                 Button(action: {
-                    darkModeEnabled.toggle()
+                        darkModeEnabled.toggle()
+                    
                 }, label: {
                     Image(systemName: darkModeEnabled ?  "sun.min" : "moon.stars")
                         .font(.largeTitle)

@@ -22,7 +22,6 @@ struct ContentView: View {
             }
             .padding(20)
             .preferredColorScheme(darkModeEnabled ? .dark : .light)
-        
     }
 }
 
