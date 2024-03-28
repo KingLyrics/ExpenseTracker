@@ -13,6 +13,7 @@
 		A816BD092BB6032200200605 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A816BD082BB6032200200605 /* Preview Assets.xcassets */; };
 		A816BD112BB6056A00200605 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD102BB6056A00200605 /* HeaderView.swift */; };
 		A816BD132BB606DA00200605 /* TotalMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD122BB606DA00200605 /* TotalMonthView.swift */; };
+		A816BD152BB60DF400200605 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD142BB60DF400200605 /* SummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A816BD082BB6032200200605 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A816BD102BB6056A00200605 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A816BD122BB606DA00200605 /* TotalMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMonthView.swift; sourceTree = "<group>"; };
+		A816BD142BB60DF400200605 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				A816BD102BB6056A00200605 /* HeaderView.swift */,
 				A816BD122BB606DA00200605 /* TotalMonthView.swift */,
+				A816BD142BB60DF400200605 /* SummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				A816BD132BB606DA00200605 /* TotalMonthView.swift in Sources */,
 				A816BD042BB6032000200605 /* ContentView.swift in Sources */,
+				A816BD152BB60DF400200605 /* SummaryView.swift in Sources */,
 				A816BD112BB6056A00200605 /* HeaderView.swift in Sources */,
 				A816BD022BB6032000200605 /* ExpenseTrackerApp.swift in Sources */,
 			);

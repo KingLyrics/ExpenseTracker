@@ -12,23 +12,13 @@ struct ContentView: View {
         VStack{
             HeaderView()
             Spacer()
-          TotalMonthView()
+            TotalMonthView()
             Spacer()
-            VStack{
-                HStack{
-                    Text("Today")
-                    Spacer()
-                    Text("$ -756.50")
-                    
-                }
-                .foregroundStyle(.gray)
-                .font(.headline)
-
+            SummaryView()
+                Spacer()
             }
-
-            Spacer()
-        }
-        .padding(20)
+            .padding(20)
+        
     }
 }
 
