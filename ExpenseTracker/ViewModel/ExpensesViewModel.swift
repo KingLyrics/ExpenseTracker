@@ -9,15 +9,14 @@ import Foundation
 
 @Observable
 class ExpensesViewModel{
-    
     var expenseItems:[ExpenseModel] = [
-        ExpenseModel(expenseCategory: .Food, image: .food, timePurchased: "2:45Am", amount: -45.99),
+        ExpenseModel(expenseCategory: .Food, image: .food, date: Date(), amount: -45.99),
         
-        ExpenseModel(expenseCategory:.Groceries, image:.groceries , timePurchased: "1:00PM", amount: -81.99),
+        ExpenseModel(expenseCategory:.Groceries, image:.groceries , date: Date(), amount: -81.99),
         
-        ExpenseModel(expenseCategory: .Gas, image: .gas, timePurchased: "3:00PM", amount: -20.11),
+        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
         
-        ExpenseModel(expenseCategory: .Education, image: .education, timePurchased: "4:00AM", amount: -900.10)
+        ExpenseModel(expenseCategory: .Education, image: .education, date: Date(), amount: -900.10)
         
         ]
     

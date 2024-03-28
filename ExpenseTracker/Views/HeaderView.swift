@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     @Binding var darkModeEnabled:Bool
+    @Binding var addSheetShowing:Bool
     
     var body: some View {
             HStack{
@@ -25,8 +26,13 @@ struct HeaderView: View {
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.title3)
                 Spacer()
-                Image(systemName: "plus")
-                    .font(.title2)
+                Button(action: {
+                    addSheetShowing = true
+                }, label: {
+                    Image(systemName: "plus")
+                        .font(.title2)
+                })
+               
                 
         }
     }
@@ -34,5 +40,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView(darkModeEnabled: .constant(false))
+    HeaderView(darkModeEnabled: .constant(false), addSheetShowing: .constant(false))
 }

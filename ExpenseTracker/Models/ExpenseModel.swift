@@ -13,7 +13,7 @@ struct ExpenseModel:Identifiable{
     var id = UUID()
     let expenseCategory:ExpenseType
     let image:ImageResource
-    let timePurchased:String
+    let date:Date
     let amount:Double
 }
 

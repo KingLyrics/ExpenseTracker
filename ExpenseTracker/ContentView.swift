@@ -11,18 +11,22 @@ struct ContentView: View {
     
     @State private var expenseViewModel = ExpensesViewModel()
     @State private var totalAmount = ExpensesViewModel().totalAmount
-    @State var darkModeEnabled:Bool = false
+    
+    @State private var darkModeEnabled:Bool = false
+    @State private var addSheetShowing:Bool = false
     
     
-   
     var body: some View {
         VStack{
-            HeaderView(darkModeEnabled: $darkModeEnabled)
+            HeaderView(darkModeEnabled: $darkModeEnabled, addSheetShowing: $addSheetShowing)
             Spacer()
             TotalMonthView(totalAmount: totalAmount)
             Spacer()
             SummaryView(totalAmount: $totalAmount , expenseItems: expenseViewModel.expenseItems)
                 Spacer()
+                .sheet(isPresented: $addSheetShowing, content: {
+                    AddExpenseView()
+                })
             }
             .padding(20)
             .preferredColorScheme(darkModeEnabled ? .dark : .light)

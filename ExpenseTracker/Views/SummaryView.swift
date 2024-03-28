@@ -33,7 +33,7 @@ struct SummaryView: View {
                             VStack(alignment:.leading){
                                 Text(item.expenseCategory.rawValue)
                                     .fontWeight(.semibold)
-                                Text(item.timePurchased)
+                                Text(formatDate(item.date))
                                     .foregroundStyle(.secondary)
                             }
                             Spacer()
@@ -47,15 +47,22 @@ struct SummaryView: View {
             
         }
     }
+    func formatDate(_ date: Date)->String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy, hh:mm a"
+        return formatter.string(from: date)
+    }
 }
 
 #Preview {
     SummaryView(totalAmount: .constant(-400), expenseItems: [
-        ExpenseModel(expenseCategory: .Food, image: .food, timePurchased: "2:45Am", amount: -45.99),
+        ExpenseModel(expenseCategory: .Food, image: .food, date: Date(), amount: -45.99),
         
-        ExpenseModel(expenseCategory:.Groceries, image:.groceries , timePurchased: "1:00PM", amount: -81.99),
+        ExpenseModel(expenseCategory:.Groceries, image:.groceries , date: Date(), amount: -81.99),
         
-        ExpenseModel(expenseCategory: .Gas, image: .gas, timePurchased: "3:00PM", amount: -20.11)
+        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
+        
+        ExpenseModel(expenseCategory: .Education, image: .education, date: Date(), amount: -900.10)
     ])
         .padding()
 }
