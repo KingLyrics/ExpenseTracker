@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SummaryView: View {
-    @Binding var totalAmount:Double
+   var totalAmount:Double
     let expenseItems:[ExpenseModel]
     
     var body: some View {
@@ -16,7 +16,7 @@ struct SummaryView: View {
                 HStack{
                     Text("Today")
                     Spacer()
-                    Text(totalAmount, format:.currency(code: "USD"))
+                    Text(totalAmount, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
                     
                 }
                 .foregroundStyle(.secondary)
@@ -37,7 +37,7 @@ struct SummaryView: View {
                                     .foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Text(item.amount, format: .currency(code: "USD"))
+                            Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                                 .foregroundStyle(item.amount < 0 ? .red : .green)
                         }
                     }
@@ -55,7 +55,7 @@ struct SummaryView: View {
 }
 
 #Preview {
-    SummaryView(totalAmount: .constant(-400), expenseItems: [
+    SummaryView(totalAmount: 4.5, expenseItems: [
         ExpenseModel(expenseCategory: .Food, image: .food, date: Date(), amount: -45.99),
         
         ExpenseModel(expenseCategory:.Groceries, image:.groceries , date: Date(), amount: -81.99),

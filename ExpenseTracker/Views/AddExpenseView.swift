@@ -9,20 +9,24 @@ import SwiftUI
 
 struct AddExpenseView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var expensesViewModel:ExpensesViewModel
+    
     
     @State private var expenseAmount:Double = 0.0
     
     @State private var selectedType:ExpenseType = .Gas
     let expenseTypes: [ExpenseType] = ExpenseType.allCases
     
+    
     var body: some View {
         NavigationStack{
             Form{
-                TextField("Amount", value: $expenseAmount, format:.currency(code: "USD"))
-                    .keyboardType(.numberPad)
+                TextField("Amount", value: $expenseAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    .keyboardType(.decimalPad)
                     .onChange(of: expenseAmount){
                         expenseAmount = abs(expenseAmount) * -1.0
                     }
+                    .padding(.vertical,10)
                 Picker("Expense Category", selection: $selectedType) {
                     ForEach(expenseTypes, id:\.self) { type in
                         HStack {
@@ -41,6 +45,7 @@ struct AddExpenseView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save"){
+                        addExpenseItem(amount: expenseAmount, type: selectedType)
                         dismiss()
                     }
                 }
@@ -57,11 +62,19 @@ struct AddExpenseView: View {
             
         }
     }
+
+    
+    func addExpenseItem(amount:Double, type:ExpenseType){
+        let newExpenseItem = ExpenseModel(expenseCategory: type, image: type.iconImage, date: Date(), amount: amount)
+        expensesViewModel.expenseItems.append(newExpenseItem)
+    }
 }
 
 
 
 
 #Preview {
-    AddExpenseView()
+    AddExpenseView( expensesViewModel: ExpensesViewModel())
+        .environmentObject(ExpensesViewModel())
+
 }

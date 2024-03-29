@@ -15,7 +15,7 @@ struct TotalMonthView: View {
             Text("Spent this month")
                 .foregroundStyle(.gray)
                 .font(.title3)
-            Text(totalAmount, format:.currency(code: "USD"))
+            Text(totalAmount, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
                 .font(.largeTitle)
                 .fontWeight(.light)
                 .foregroundStyle(.red)
