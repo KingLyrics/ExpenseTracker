@@ -20,6 +20,7 @@ struct ContentView: View {
                     Label("Analytics", systemImage: "chart.pie.fill")
                 }
         }
+
     }
     
 }
