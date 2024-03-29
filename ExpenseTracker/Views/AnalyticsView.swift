@@ -37,6 +37,8 @@ struct AnalyticsView: View {
                     BarMark(x: .value("Month", expense.date, unit:.month),
                             y: .value("Amount", expense.amount)
                             )
+                    
+                    
                     .foregroundStyle(.pink.gradient)
                 }
                 .frame(height: 180)

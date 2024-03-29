@@ -9,9 +9,8 @@ import Foundation
 import Charts
 
 class ExpensesViewModel: ObservableObject {
-    
     let expenseKey:String = "expense_key"
-    
+        
     @Published var expenseItems: [ExpenseModel] = [
         ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -45.99),
         
@@ -19,7 +18,10 @@ class ExpensesViewModel: ObservableObject {
         
         ExpenseModel(expenseCategory: .Gas, image: "gas", date: Date(), amount: -20.11),
         
-        ExpenseModel(expenseCategory: .Education, image: "education", date: Date(), amount: -900.10)
+        ExpenseModel(expenseCategory: .Education, image: "education", date: Date(), amount: -900.10),
+        
+        
+
     ]{
         didSet{
             calculateTotalAmount()
@@ -30,9 +32,25 @@ class ExpensesViewModel: ObservableObject {
     
     @Published var totalAmount: Double = 0.0
     
+    
+
     init() {
         calculateTotalAmount()
+        expenseItems.append(trialexpense)
+
     }
+    
+    
+    
+    var trialexpense: ExpenseModel {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: "2024-01-29")!
+            
+            return ExpenseModel(expenseCategory: .Education, image: "education", date: date, amount: -900.10)
+        }
+    
+    
     
     func calculateTotalAmount() {
         var sum: Double = 0.0
