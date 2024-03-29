@@ -20,6 +20,7 @@ struct TotalMonthView: View {
                 .fontWeight(.light)
                 .foregroundStyle(.red)
         }
+        .padding(.top,90)
     }
 }
 

@@ -46,6 +46,7 @@ struct SummaryView: View {
                 }
             
         }
+        .padding(.top, 100)
     }
     func formatDate(_ date: Date)->String{
         let formatter = DateFormatter()
