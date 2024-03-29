@@ -36,21 +36,8 @@ class ExpensesViewModel: ObservableObject {
 
     init() {
         calculateTotalAmount()
-        expenseItems.append(trialexpense)
 
     }
-    
-    
-    
-    var trialexpense: ExpenseModel {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: "2024-01-29")!
-            
-            return ExpenseModel(expenseCategory: .Education, image: "education", date: date, amount: -900.10)
-        }
-    
-    
     
     func calculateTotalAmount() {
         var sum: Double = 0.0
@@ -70,6 +57,7 @@ class ExpensesViewModel: ObservableObject {
         expenseItems.append(expense)
     }
     
+    //get expense
     
     func getChartDataByMonth()->[ChartModel]{
         let calendar = Calendar.current
