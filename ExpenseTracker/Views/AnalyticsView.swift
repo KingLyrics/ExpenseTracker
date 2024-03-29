@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Charts
 
 struct AnalyticsView: View {
     
     @ObservedObject var expensesViewModel:ExpensesViewModel
     @Binding var darkModeEnabled:Bool
+    
     
     
     var body: some View {
@@ -30,6 +32,16 @@ struct AnalyticsView: View {
                     
                     Spacer()
                 }
+                
+                Chart(expensesViewModel.getChartDataByMonth()){ expense in
+                    BarMark(x: .value("Month", expense.date, unit:.month),
+                            y: .value("Amount", expense.amount)
+                            )
+                    .foregroundStyle(.pink.gradient)
+                }
+                .frame(height: 180)
+                .padding(.top, 30)
+                
               
             }
             .padding()
