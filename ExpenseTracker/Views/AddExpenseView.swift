@@ -66,7 +66,7 @@ struct AddExpenseView: View {
     
     func addExpenseItem(amount:Double, type:ExpenseType){
         let newExpenseItem = ExpenseModel(expenseCategory: type, image: type.iconImage, date: Date(), amount: amount)
-        expensesViewModel.expenseItems.append(newExpenseItem)
+        expensesViewModel.addExpense(expense: newExpenseItem)
     }
 }
 

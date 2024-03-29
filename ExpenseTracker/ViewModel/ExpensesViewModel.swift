@@ -10,26 +10,13 @@ import SwiftUI
 
 class ExpensesViewModel: ObservableObject {
     
-    @Published var expenseItems: [ExpenseModel] = [
-        ExpenseModel(expenseCategory: .Food, image: .food, date: Date(), amount: -45.99),
-        ExpenseModel(expenseCategory:.Groceries, image:.groceries , date: Date(), amount: -81.99),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Education, image: .education, date: Date(), amount: -900.10),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-        ExpenseModel(expenseCategory: .Gas, image: .gas, date: Date(), amount: -20.11),
-
-
-    ]{
+    let expenseKey:String = "expense_key"
+    
+    @Published var expenseItems: [ExpenseModel] = []{
         didSet{
             calculateTotalAmount()
+            saveExpenses()
+
         }
     }
     
@@ -46,17 +33,20 @@ class ExpensesViewModel: ObservableObject {
         }
         totalAmount = sum
     }
+   
+
+    func saveExpenses(){
+        guard let encodedData = try?JSONEncoder().encode(expenseItems)else{return}
+        UserDefaults.standard.set(encodedData,forKey: expenseKey)
+        
+    }
     
-//    func saveExpenseItem(amount: Double, type: ExpenseType) {
-//        let newExpenseItem = ExpenseModel(expenseCategory: type,
-//                                          image: type.iconImage,
-//                                          date: Date(), amount: amount)
-//        expenseItems.append(newExpenseItem)
-//        calculateTotalAmount()
-//    }
-    
+    func addExpense(expense:ExpenseModel){
+        expenseItems.append(expense)
+    }
     
 }
+
 
 
 

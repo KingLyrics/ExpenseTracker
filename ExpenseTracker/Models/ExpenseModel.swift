@@ -6,19 +6,38 @@
 //
 
 import Foundation
-import SwiftUI
 
 
-struct ExpenseModel:Identifiable{
-    var id = UUID()
+struct ExpenseModel:Identifiable,Decodable, Encodable{
+    
+    var id:UUID
     let expenseCategory:ExpenseType
-    let image:ImageResource
+    let image:String
     let date:Date
     let amount:Double
+    
+    init(id: UUID = UUID(), expenseCategory: ExpenseType, image: String, date: Date, amount: Double) {
+        self.id = id
+        self.expenseCategory = expenseCategory
+        self.image = image
+        self.date = date
+        self.amount = amount
+    }
+    
+    enum CodingKeys: CodingKey {
+      case id
+      case expenseCategory
+      case image
+      case date
+      case amount
+    }
 }
 
 
-enum ExpenseType:String,CaseIterable{
+
+
+
+enum ExpenseType:String,CaseIterable,Decodable, Encodable{
     case Food
     case Vacation
     case Clothes
@@ -29,26 +48,26 @@ enum ExpenseType:String,CaseIterable{
     case Pill
     case Education
     
-    var iconImage:ImageResource{
+    var iconImage:String{
         switch self {
         case .Food:
-                .food
+            self.rawValue.lowercased()
         case .Vacation:
-                .vacation
+            self.rawValue.lowercased()
         case .Clothes:
-                .clothes
+            self.rawValue.lowercased()
         case .Gas:
-                .gas
+            self.rawValue.lowercased()
         case .Gift:
-                .gift
+            self.rawValue.lowercased()
         case .Groceries:
-                .groceries
+            self.rawValue.lowercased()
         case .Home:
-                .home
+            self.rawValue.lowercased()
         case .Pill:
-                .pill
+            self.rawValue.lowercased()
         case .Education:
-                .education
+            self.rawValue.lowercased()
         }
     }
 }
