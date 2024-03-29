@@ -17,6 +17,20 @@ struct AnalyticsView: View {
         ScrollView{
             VStack{
                 AnalyticsHeaderView(darkModeEnabled: $darkModeEnabled)
+                HStack {
+                    VStack(alignment: .leading,spacing: 10){
+                        Text(expensesViewModel.totalAmount, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
+                            .font(.title)
+                            .foregroundStyle(expensesViewModel.totalAmount < 0 ? .red  : .black)
+                        Text("Total spent this month ")
+                            .font(.headline)
+                            .foregroundStyle(.gray)
+                    }
+                    .padding(.top, 30)
+                    
+                    Spacer()
+                }
+              
             }
             .padding()
         }
