@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct AnalyticsView: View {
+    
+    @Binding var darkModeEnabled:Bool
+    @ObservedObject var expensesViewModel:ExpensesViewModel
+
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Button(action: {
+                    darkModeEnabled.toggle()
+                
+            }, label: {
+                Image(systemName: darkModeEnabled ?  "sun.min" : "moon.stars")
+                    .font(.title)
+                    .foregroundStyle(darkModeEnabled ? .white : .black)
+            })
+            Spacer()
+            Text("EXPENSES")
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .font(.title3)
+            Spacer()
+            Button(action: {
+            }, label: {
+                Image(systemName: "plus")
+                    .font(.title2)
+            })
+           
+            
     }
 }
+    }
 
 #Preview {
-    AnalyticsView()
+    AnalyticsView(darkModeEnabled: .constant(false), expensesViewModel: ExpensesViewModel())
+        .environmentObject(ExpensesViewModel())
 }

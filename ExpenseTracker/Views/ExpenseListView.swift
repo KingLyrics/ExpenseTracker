@@ -9,22 +9,21 @@ import SwiftUI
 
 struct ExpenseListView: View {
     
-    @EnvironmentObject var expenseViewModel:ExpensesViewModel
-
-    @State private var darkModeEnabled:Bool = false
-    @State private var addSheetShowing:Bool = false
+    @ObservedObject var expensesViewModel:ExpensesViewModel
+    @Binding  var darkModeEnabled:Bool
+    @Binding  var addSheetShowing:Bool
     
     var body: some View {
         ScrollView{
             VStack{
                 HeaderView(darkModeEnabled: $darkModeEnabled, addSheetShowing: $addSheetShowing)
                 Spacer()
-                TotalMonthView(totalAmount:expenseViewModel.totalAmount)
+                TotalMonthView(totalAmount:expensesViewModel.totalAmount)
                 Spacer()
-                SummaryView(totalAmount:expenseViewModel.totalAmount  , expenseItems: expenseViewModel.expenseItems)
+                SummaryView(totalAmount:expensesViewModel.totalAmount  , expenseItems: expensesViewModel.expenseItems)
                 Spacer()
                     .sheet(isPresented: $addSheetShowing, content: {
-                        AddExpenseView(expensesViewModel: expenseViewModel)
+                        AddExpenseView(expensesViewModel: expensesViewModel)
                         
                     })
             }
@@ -35,6 +34,6 @@ struct ExpenseListView: View {
 }
 
 #Preview {
-    ExpenseListView()
+    ExpenseListView(expensesViewModel: ExpensesViewModel(), darkModeEnabled: .constant(false), addSheetShowing: .constant(false))
         .environmentObject(ExpensesViewModel())
 }

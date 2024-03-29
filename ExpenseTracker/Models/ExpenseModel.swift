@@ -45,7 +45,7 @@ enum ExpenseType:String,CaseIterable,Decodable, Encodable{
     case Gift
     case Groceries
     case Home
-    case Pill
+    case Health
     case Education
     
     var iconImage:String{
@@ -64,7 +64,7 @@ enum ExpenseType:String,CaseIterable,Decodable, Encodable{
             self.rawValue.lowercased()
         case .Home:
             self.rawValue.lowercased()
-        case .Pill:
+        case .Health:
             self.rawValue.lowercased()
         case .Education:
             self.rawValue.lowercased()

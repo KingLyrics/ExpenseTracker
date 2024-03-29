@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 class ExpensesViewModel: ObservableObject {
     
@@ -34,7 +33,6 @@ class ExpensesViewModel: ObservableObject {
         totalAmount = sum
     }
    
-
     func saveExpenses(){
         guard let encodedData = try?JSONEncoder().encode(expenseItems)else{return}
         UserDefaults.standard.set(encodedData,forKey: expenseKey)

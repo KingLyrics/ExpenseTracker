@@ -18,12 +18,12 @@ struct TotalMonthView: View {
             Text(totalAmount, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
                 .font(.largeTitle)
                 .fontWeight(.light)
-                .foregroundStyle(.red)
+                .foregroundStyle(totalAmount < 0 ? .red : .black)
         }
         .padding(.top,90)
     }
 }
 
 #Preview {
-    TotalMonthView(totalAmount: -654.50)
+    TotalMonthView(totalAmount: 0.00)
 }
