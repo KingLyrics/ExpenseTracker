@@ -16,7 +16,7 @@ struct ExpenseListView: View {
     var body: some View {
         ScrollView{
             VStack{
-                HeaderView(darkModeEnabled: $darkModeEnabled, addSheetShowing: $addSheetShowing)
+                HeaderView(darkModeEnabled: $darkModeEnabled, addSheetShowing: $addSheetShowing, pageTitle: "EXPENSES")
                 Spacer()
                 TotalMonthView(totalAmount:expensesViewModel.totalAmount)
                 Spacer()

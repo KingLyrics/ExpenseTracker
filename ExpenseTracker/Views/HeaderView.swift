@@ -10,6 +10,7 @@ import SwiftUI
 struct HeaderView: View {
     @Binding var darkModeEnabled:Bool
     @Binding var addSheetShowing:Bool
+    let pageTitle:String
     
     var body: some View {
             HStack{
@@ -22,7 +23,7 @@ struct HeaderView: View {
                         .foregroundStyle(darkModeEnabled ? .white : .black)
                 })
                 Spacer()
-                Text("EXPENSES")
+                Text(pageTitle)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.title3)
                 Spacer()
@@ -40,5 +41,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView(darkModeEnabled: .constant(false), addSheetShowing: .constant(false))
+    HeaderView(darkModeEnabled: .constant(false), addSheetShowing: .constant(false), pageTitle: "Expenses")
 }

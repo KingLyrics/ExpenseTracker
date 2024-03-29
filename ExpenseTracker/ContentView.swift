@@ -19,7 +19,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Expenses", systemImage: "list.clipboard.fill" )
                 }
-            AnalyticsView(darkModeEnabled: $darkModeEnabled, expensesViewModel: expenseViewModel)
+            AnalyticsView(expensesViewModel: expenseViewModel, darkModeEnabled: $darkModeEnabled)
                 .tabItem{
                     Label("Analytics", systemImage: "chart.pie.fill")
                 }
