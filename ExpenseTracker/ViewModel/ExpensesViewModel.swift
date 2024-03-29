@@ -19,6 +19,7 @@ class ExpensesViewModel{
         ExpenseModel(expenseCategory: .Education, image: .education, date: Date(), amount: -900.10)
         
         ]
+
     
     init() {}
     
