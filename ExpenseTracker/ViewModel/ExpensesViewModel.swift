@@ -12,13 +12,13 @@ class ExpensesViewModel: ObservableObject {
     let expenseKey:String = "expense_key"
         
     @Published var expenseItems: [ExpenseModel] = [
-        ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -45.99),
+        ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -20000),
         
-        ExpenseModel(expenseCategory:.Groceries, image:"groceries" , date: Date(), amount: -81.99),
+        ExpenseModel(expenseCategory:.Groceries, image:"groceries" , date: Date(), amount: -81999),
         
-        ExpenseModel(expenseCategory: .Gas, image: "gas", date: Date(), amount: -20.11),
+        ExpenseModel(expenseCategory: .Gas, image: "gas", date: Date(), amount: -2000),
         
-        ExpenseModel(expenseCategory: .Education, image: "education", date: Date(), amount: -900.10),
+        ExpenseModel(expenseCategory: .Education, image: "education", date: Date(), amount: -9000),
         
         
 
@@ -83,6 +83,12 @@ class ExpensesViewModel: ObservableObject {
         }
         return chartData
 
+    }
+    
+    func findHighestExpense()->(amount:Double, date:Date)?{
+        guard !expenseItems.isEmpty else{return nil}
+        let sortedExpenses = expenseItems.sorted{ abs($0.amount) >  abs($1.amount)}
+        return (sortedExpenses.first!.amount, sortedExpenses.first!.date)
     }
     
 }

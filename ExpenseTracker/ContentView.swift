@@ -34,8 +34,4 @@ struct ContentView: View {
         .environmentObject(ExpensesViewModel())
 }
 
-/*
- 
- 2) Add a bar chart page
- 
- */
+
