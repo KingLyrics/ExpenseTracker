@@ -9,50 +9,48 @@ import SwiftUI
 
 struct HighestSpentCardView: View {
     @ObservedObject var expensesViewModel:ExpensesViewModel
-
+    
     var body: some View {
-        VStack{
-            HStack{
-                Image(systemName: "arrow.up.forward")
-                    .padding(8)
-                    .background(.black)
-                    .clipShape(Circle())
-                    .foregroundStyle(.white)
-                VStack(alignment: .leading){
-                    Text("Highest Spent")
-                    if let dateofExpense = expensesViewModel.findHighestExpense(){
-                        Text(formatDate(dateofExpense.date))
-                    }else{
-                        Text("No expense yet")
-                    }
-                }
-                .foregroundStyle(.white)
-
-                Spacer()
-                if let highestExpense = expensesViewModel.findHighestExpense(){
-                    Text(abs(highestExpense.amount), format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
+        if let highestExpense = expensesViewModel.findHighestExpense(){
+            VStack{
+                HStack{
+                    Image(systemName: "arrow.up.forward")
+                        .padding(8)
+                        .background(.black)
+                        .clipShape(Circle())
                         .foregroundStyle(.white)
-                }else{
-                    Text("No expense yet")
+                    VStack(alignment: .leading){
+                        Text("Highest Spent")
+                        if let dateofExpense = expensesViewModel.findHighestExpense(){
+                            Text(formatDate(dateofExpense.date))
+                        }else{
+                            Text("No expense yet")
+                        }
+                    }
+                    .foregroundStyle(.white)
+                    
+                    Spacer()
+                    Text(abs(highestExpense.amount), format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .foregroundStyle(.white)
                 }
             }
             .padding(10)
             .background(.gray)
+            .padding(.top, 50)
             
         }
-        .padding(.top, 50)
-
-    }
-    func formatDate(_ date: Date)->String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM yyyy"
-        return formatter.string(from: date)
     }
 }
+
+func formatDate(_ date: Date)->String{
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd MMM yyyy"
+    return formatter.string(from: date)
+}
+
 
 #Preview {
     HighestSpentCardView(expensesViewModel: ExpensesViewModel())
         .environmentObject(ExpensesViewModel())
-
+    
 }

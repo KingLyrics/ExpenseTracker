@@ -12,16 +12,7 @@ class ExpensesViewModel: ObservableObject {
     let expenseKey:String = "expense_key"
         
     @Published var expenseItems: [ExpenseModel] = [
-        ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -20000),
-        ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -20000),
-        
-        ExpenseModel(expenseCategory:.Groceries, image:"groceries" , date: Date(), amount: -81999),
-        
-        ExpenseModel(expenseCategory: .Gas, image: "gas", date: Date(), amount: -2000),
-        
-        ExpenseModel(expenseCategory: .Education, image: "education", date: Date(), amount: -9000),
-        
-        
+      
 
     ]{
         didSet{

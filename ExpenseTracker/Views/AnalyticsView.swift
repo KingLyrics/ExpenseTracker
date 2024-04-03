@@ -49,8 +49,7 @@ struct AnalyticsView: View {
                             
                         }
                         .foregroundStyle(.white)
-                        
-                        
+                    
                     }
                     .padding(10)
                     .background(.gray)
@@ -58,6 +57,8 @@ struct AnalyticsView: View {
                     
                     
                 }
+                
+                
                 
             }
             .padding()
