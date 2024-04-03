@@ -23,6 +23,8 @@
 		A816BD252BB7041C00200605 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816BD242BB7041C00200605 /* ChartModel.swift */; };
 		A8F35E972BBD6FA700D42F86 /* HighestSpentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F35E962BBD6FA700D42F86 /* HighestSpentCardView.swift */; };
 		A8F35E992BBD704100D42F86 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F35E982BBD704100D42F86 /* ChartView.swift */; };
+		A8F35E9B2BBD963E00D42F86 /* MostEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F35E9A2BBD963E00D42F86 /* MostEntryView.swift */; };
+		A8F35E9D2BBD96E500D42F86 /* MonthViewFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F35E9C2BBD96E500D42F86 /* MonthViewFigure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		A816BD242BB7041C00200605 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		A8F35E962BBD6FA700D42F86 /* HighestSpentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighestSpentCardView.swift; sourceTree = "<group>"; };
 		A8F35E982BBD704100D42F86 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		A8F35E9A2BBD963E00D42F86 /* MostEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEntryView.swift; sourceTree = "<group>"; };
+		A8F35E9C2BBD96E500D42F86 /* MonthViewFigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewFigure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				A816BD202BB6EA5600200605 /* AnalyticsView.swift */,
 				A8F35E962BBD6FA700D42F86 /* HighestSpentCardView.swift */,
 				A8F35E982BBD704100D42F86 /* ChartView.swift */,
+				A8F35E9A2BBD963E00D42F86 /* MostEntryView.swift */,
+				A8F35E9C2BBD96E500D42F86 /* MonthViewFigure.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				A816BD182BB61C0100200605 /* ExpenseModel.swift in Sources */,
 				A816BD132BB606DA00200605 /* TotalMonthView.swift in Sources */,
 				A816BD042BB6032000200605 /* ContentView.swift in Sources */,
+				A8F35E9D2BBD96E500D42F86 /* MonthViewFigure.swift in Sources */,
 				A8F35E992BBD704100D42F86 /* ChartView.swift in Sources */,
 				A816BD212BB6EA5600200605 /* AnalyticsView.swift in Sources */,
 				A816BD1D2BB62DD700200605 /* AddExpenseView.swift in Sources */,
@@ -208,6 +215,7 @@
 				A816BD232BB6FEA500200605 /* AnalyticsHeaderView.swift in Sources */,
 				A816BD1B2BB6278A00200605 /* ExpensesViewModel.swift in Sources */,
 				A8F35E972BBD6FA700D42F86 /* HighestSpentCardView.swift in Sources */,
+				A8F35E9B2BBD963E00D42F86 /* MostEntryView.swift in Sources */,
 				A816BD112BB6056A00200605 /* HeaderView.swift in Sources */,
 				A816BD252BB7041C00200605 /* ChartModel.swift in Sources */,
 				A816BD022BB6032000200605 /* ExpenseTrackerApp.swift in Sources */,

@@ -12,7 +12,7 @@ class ExpensesViewModel: ObservableObject {
     let expenseKey:String = "expense_key"
         
     @Published var expenseItems: [ExpenseModel] = [
-      
+        ExpenseModel(expenseCategory: .Clothes, image: "clothes", date: Date(), amount: -9000)
 
     ]{
         didSet{
