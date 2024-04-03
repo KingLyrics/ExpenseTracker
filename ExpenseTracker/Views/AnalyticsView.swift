@@ -28,14 +28,43 @@ struct AnalyticsView: View {
                     
                     Spacer()
                 }
-                
                 ChartView(expensesViewModel: expensesViewModel)
                 HighestSpentCardView(expensesViewModel: expensesViewModel)
+                
+                if let mostEntryData = expensesViewModel.findMostFrequentImageName(){
+                    VStack{
+                        HStack{
+                            Image(systemName: "tag.fill")
+                                .padding(8)
+                                .background(.black)
+                                .clipShape(Circle())
+                                .foregroundStyle(.white)
+                            VStack(alignment: .leading){
+                                Text("Most Entry")
+                                Text("\(mostEntryData.count) on \(mostEntryData.name.capitalized)")
+                            }
+                            Spacer()
+                            Text(abs(mostEntryData.totalAmount), format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
+                                .foregroundStyle(.white)
+                            
+                        }
+                        .foregroundStyle(.white)
+                        
+                        
+                    }
+                    .padding(10)
+                    .background(.gray)
+                    .padding(.top, 10)
+                    
+                    
+                }
+                
             }
             .padding()
         }
     }
-   
+
+    
 }
 
 #Preview {

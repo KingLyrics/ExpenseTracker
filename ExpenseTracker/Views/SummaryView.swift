@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct SummaryView: View {
-   var totalAmount:Double
+    var totalAmount:Double
     let expenseItems:[ExpenseModel]
     
     var body: some View {
         VStack(alignment:.leading){
-                HStack{
-                    Text("Today")
-                    Spacer()
-                    Text(totalAmount, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    
-                }
-                .foregroundStyle(.secondary)
-                .font(.headline)
-                .padding(.bottom, 10)
-           
+            HStack{
+                Text("Today")
+                Spacer()
+                Text(totalAmount, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
+                
+            }
+            .foregroundStyle(.secondary)
+            .font(.headline)
+            .padding(.bottom, 10)
+            
             VStack(alignment:.leading){
                     ForEach(expenseItems) { item in
                         HStack(spacing:10){
@@ -40,10 +40,11 @@ struct SummaryView: View {
                             Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                                 .foregroundStyle(item.amount < 0 ? .red : .green)
                         }
+                        
                     }
-                   
-                  
-                }
+            
+                
+            }
             
         }
         .padding(.top, 100)
@@ -56,7 +57,7 @@ struct SummaryView: View {
 }
 
 #Preview {
-    SummaryView(totalAmount: 4.5, expenseItems: [
+    SummaryView( totalAmount: 4.5, expenseItems: [
         ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -45.99),
         
         ExpenseModel(expenseCategory:.Groceries, image:"groceries" , date: Date(), amount: -81.99),
@@ -65,5 +66,5 @@ struct SummaryView: View {
         
         ExpenseModel(expenseCategory: .Education, image: "education", date: Date(), amount: -900.10)
     ])
-        .padding()
+    .padding()
 }

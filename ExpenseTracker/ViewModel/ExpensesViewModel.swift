@@ -13,6 +13,7 @@ class ExpensesViewModel: ObservableObject {
         
     @Published var expenseItems: [ExpenseModel] = [
         ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -20000),
+        ExpenseModel(expenseCategory: .Food, image: "food", date: Date(), amount: -20000),
         
         ExpenseModel(expenseCategory:.Groceries, image:"groceries" , date: Date(), amount: -81999),
         
@@ -89,6 +90,33 @@ class ExpensesViewModel: ObservableObject {
         guard !expenseItems.isEmpty else{return nil}
         let sortedExpenses = expenseItems.sorted{ abs($0.amount) >  abs($1.amount)}
         return (sortedExpenses.first!.amount, sortedExpenses.first!.date)
+    }
+    
+    
+    func findMostFrequentImageName() -> (name: String, count: Int, totalAmount: Double)? {
+        guard !expenseItems.isEmpty else { return nil } // Handle empty array
+
+        let imageCounts = expenseItems.reduce(into: [String: Int]()) { counts, item in
+            counts[item.image, default: 0] += 1
+        }
+
+        let imageTotals = expenseItems.reduce(into: [String: Double]()) { totals, item in
+            totals[item.image, default: 0.0] += item.amount
+        }
+
+        guard let mostFrequentImageName = imageCounts.max(by: { $0.value < $1.value })?.key else {
+            return nil
+        }
+
+        let mostFrequentCount = imageCounts[mostFrequentImageName] ?? 0
+        let totalAmount = imageTotals[mostFrequentImageName] ?? 0.0
+
+        return (mostFrequentImageName, mostFrequentCount, totalAmount)
+    }
+
+   
+    func deleteExpense(indexSet:IndexSet){
+        expenseItems.remove(atOffsets: indexSet)
     }
     
 }
