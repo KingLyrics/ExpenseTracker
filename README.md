@@ -1,6 +1,6 @@
 ## Expense Tracker: Keep Your Finances Organized  
 
-This is a mobile application (Swift/SwiftUI) designed to help you track your personal expenses and gain insights into your spending habits. It allows you to record expenses with categories, and amounts, and then provides functionalities to visualize your spending patterns.
+Expense Tracker is a mobile application (Swift/SwiftUI) designed to help you track your personal expenses and gain insights into your spending habits. It allows you to record expenses with categories and amounts, and then provides functionalities to visualize your spending patterns.
 
 **Features:**
 
@@ -19,13 +19,13 @@ This is a mobile application (Swift/SwiftUI) designed to help you track your per
 
 The codebase is organized into the following main components:
 
-* **Models:** This folder defines structs representing expense data (`ExpenseModel`).
-* **ViewModels:** This folder contains view models responsible for managing data and exposing functionalities to the view (`ExpenseViewModel`).
-* **Views:** This folder holds the SwiftUI views that build the user interface, including the main expense entry screen and the Analytics screen.
+* **Models:** Defines structs representing expense data (`ExpenseModel`).
+* **ViewModels:** Contains view models responsible for managing data and exposing functionalities to the view (`ExpenseViewModel`).
+* **Views:** Holds SwiftUI views that build the user interface, including the main expense entry screen and the Analytics screen.
 
 **Contributing:**
 
-We welcome contributions to this project! Feel free to fork the repository, make changes, and submit pull requests. 
+We welcome contributions to this project! Feel free to fork the repository, make changes, and submit pull requests.
 
 **License:**
 
@@ -39,7 +39,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 * Implement filtering and sorting options for expenses.
 * Add support for recurring expenses.
-* Grouped Expenses:** View expenses grouped by category and image for a more organized breakdown of your spending.
+* Grouped Expenses: View expenses grouped by category and image for a more organized breakdown of your spending.
 * Integrate with budgeting tools.
 * Explore chart visualizations for spending trends.
 
