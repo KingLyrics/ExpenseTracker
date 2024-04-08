@@ -10,7 +10,7 @@ Expense Tracker is a mobile application (Swift/SwiftUI) designed to help you tra
 
 **Getting Started:**
 
-1. **Clone the Repository:** Use `git clone https://github.com/your-username/expense-tracker.git` to clone this repository.
+1. **Clone the Repository:** Use `git clone https://github.com/KingLyrics/ExpenseTracker.git` to clone this repository.
 2. **Install Dependencies:** Run `swift package update` to install all required dependencies.
 3. **Open in Xcode:** Open the `ExpenseTracker.xcodeproj` file in Xcode.
 4. **Run the App:** Build and run the app on your iOS simulator or device.
