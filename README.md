@@ -33,7 +33,12 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 **Screenshots:**
 
-[Add screenshots showcasing the app's functionalities (optional)]
+
+<img width="200" alt="Screenshot 2024-04-08 at 12 07 00" src="https://github.com/KingLyrics/ExpenseTracker/assets/56762105/3ccd323e-4e4d-441a-b9c1-56b7755d4f0c">
+<img width="200" alt="Screenshot 2024-04-08 at 12 06 50" src="https://github.com/KingLyrics/ExpenseTracker/assets/56762105/bfd3eb41-47b8-4a18-a7ec-a3385fd30b9f">
+<img width="200" alt="Screenshot 2024-04-08 at 12 07 06" src="https://github.com/KingLyrics/ExpenseTracker/assets/56762105/cbc029e7-efda-4ac5-81ed-6ef5672e078c">
+<img width="200" alt="Screenshot 2024-04-08 at 12 07 11" src="https://github.com/KingLyrics/ExpenseTracker/assets/56762105/060e04b2-bba0-4706-90b3-a5eb49174d04">
+
 
 **Future Enhancements:**
 
@@ -42,5 +47,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 * Grouped Expenses: View expenses grouped by category and image for a more organized breakdown of your spending.
 * Integrate with budgeting tools.
 * Explore chart visualizations for spending trends.
+* Delete expense
+  
 
 We're excited to see how you use this expense tracker to manage your finances effectively!
